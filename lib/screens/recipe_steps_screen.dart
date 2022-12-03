@@ -70,9 +70,6 @@ class _RecipeStepsScreenState extends State<RecipeStepsScreen> {
     RecipeStep currentRecipeStep = widget.recipe.steps[currentStep];
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Recipe Steps"),
-      ),
       body: ListView(
         children: [
           Text("${currentRecipeStep.text}"),

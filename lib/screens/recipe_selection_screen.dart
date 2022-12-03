@@ -7,9 +7,6 @@ class RecipeSelectionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Recipe Selection"),
-      ),
       body: ListView(
         children: [
           Text("Coffee Recipes", key: Key("coffee-recipes")),
