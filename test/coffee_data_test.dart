@@ -15,4 +15,21 @@ void main() {
     expect(recipes[0].name, "Sweet Maria's");
     expect(recipes[0].steps, isA<List<RecipeStep>>());
   });
+  test('Test for Sweet Marias', () {
+    List<CoffeeRecipe> recipes = CoffeeData.loadRecipes();
+    expect(recipes[0].steps[0].text, "Add 360g water");
+    expect(recipes[0].steps[0].time, 30);
+
+    expect(recipes[0].steps[1].text, "Cover and wait");
+    expect(recipes[0].steps[1].time, 90);
+
+    expect(recipes[0].steps[2].text, "Stir");
+    expect(recipes[0].steps[2].time, 15);
+
+    expect(recipes[0].steps[3].text, "Cover and wait");
+    expect(recipes[0].steps[3].time, 75);
+
+    expect(recipes[0].steps[4].text, "Stir");
+    expect(recipes[0].steps[4].time, 15);
+  });
 }
