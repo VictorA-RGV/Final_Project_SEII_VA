@@ -28,6 +28,7 @@ class RecipeList extends StatelessWidget {
       children: [
         for (CoffeeRecipe recipe in recipes)
           ListTile(
+              key: Key('recipe-name-${recipe.name}'),
               title: Text(recipe.name),
               trailing: Icon(Icons.chevron_right),
               onTap: () {
