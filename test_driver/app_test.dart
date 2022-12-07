@@ -28,46 +28,20 @@ void main() {
       expect(await driver.getText(coffeeRecipesTextFinder), "Coffee Recipes");
     });
     group('Happy Paths', () {
-      test('Back Button on Recipe Detail Screen', () async {
-        final recipeSelectionBtn = find.byValueKey("recipe-name-Sweet Maria's");
-        final recipeNameText = find.byValueKey("recipe-name-key-Sweet Maria's");
-        final backBtnFinder = find.byValueKey('back-arrow-button');
-        //On the Recipe Selection Screen, we select Sweet Maria's
-        await driver.tap(recipeSelectionBtn);
-
-        //On the Recipe Detail Screen, we expect to see the text "Sweet Maria's"
-        expect(await driver.getText(recipeNameText), "Sweet Maria's");
-        //If we press back button, we expect to navigate back to the Recipe Selection Screen
-        await driver.tap(backBtnFinder);
-      });
-
-      //Given I am on Sweet Maria's Recipe Detail Screen
-      //I should see "Sweet Maria's"
-      //And I should see "22g - finely ground coffee"
-      //And I should see "360g water"
-      //And I should see "Total: 4:00"
-      //And I should see "Add 360g water"
-      //And I should see ...
-      test('Should display Sweet Marias recipe data', () async {
+      /*
+        Given I am on the Recipe Selection Screen
+        When I tap on "Sweet Maria's recipe"
+        And I am on the Recipe Detail Screen and see the steps, time, and ingredients for the coffee
+        And I tap start
+        And I go through all the steps for making the coffee
+        Then I should see "enjoy your amazing handmade coffee"
+      */
+      test('Should go through info and steps of Sweet Maria Coffee', () async {
         final recipeSelectionBtn = find.byValueKey("recipe-name-Sweet Maria's");
         final recipeNameText = find.byValueKey("recipe-name-key-Sweet Maria's");
         final recipeDataText = find.byValueKey('recipe-data-key');
         final recipeMiscDetailsText =
             find.byValueKey('recipe-miscDetails-text');
-        //On the Recipe Selection Screen, we select Sweet Maria's
-        await driver.tap(recipeSelectionBtn);
-
-        //On the Recipe Detail Screen, we expect to see the text "Sweet Maria's"
-        expect(await driver.getText(recipeNameText), "Sweet Maria's");
-        //And the text "22g - finely ground coffee 360g - water"
-        expect(await driver.getText(recipeDataText),
-            "22g - finely ground coffee\n 360g - water");
-        //And the text "The original recipe: makes one delicious cup"
-        expect(await driver.getText(recipeMiscDetailsText),
-            "The original recipe: makes one delicious cup");
-      });
-      test('Should display Sweet Marias recipe steps', () async {
-        final recipeNameText = find.byValueKey("recipe-name-key-Sweet Maria's");
         final totalTimeText = find.byValueKey('total-time-text');
         final stepAddWater = find.byValueKey('step0');
         final timeAddWater = find.byValueKey('1-time-text');
@@ -79,9 +53,22 @@ void main() {
         final timeCoverAndWait2 = find.byValueKey('7-time-text');
         final stepStir2 = find.byValueKey('step8');
         final timeStir2 = find.byValueKey('9-time-text');
+        final startBtn = find.byValueKey('start-button');
+
+        //On the Recipe Selection Screen, we select Sweet Maria's
+        await driver.tap(recipeSelectionBtn);
 
         //On the Recipe Detail Screen, we expect to see the text "Sweet Maria's"
         expect(await driver.getText(recipeNameText), "Sweet Maria's");
+
+        //And the text "22g - finely ground coffee 360g - water"
+        expect(await driver.getText(recipeDataText),
+            "22g - finely ground coffee\n 360g - water");
+
+        //And the text "The original recipe: makes one delicious cup"
+        expect(await driver.getText(recipeMiscDetailsText),
+            "The original recipe: makes one delicious cup");
+
         //And the text "Total: 03:45"
         expect(await driver.getText(totalTimeText), "Total: 03:45");
 
@@ -104,13 +91,33 @@ void main() {
         //we expect to see the next step text "Cover and wait" With the time "00:15"
         expect(await driver.getText(stepStir2), "Stir");
         expect(await driver.getText(timeStir2), "00:15");
-      });
-      test('From the Recipe Detail Screen navigate to the Recipe Steps Screen ',
-          () async {
-        final startBtn = find.byValueKey('start-button');
+
         //If user presses start button, they will be navigated to the Recipe Steps Screen
         await driver.tap(startBtn);
       });
+    });
+
+    group('Back Button', () {
+      /*
+        Given I am on the Recipe Selection Screen
+        When I tap on "Sweet Maria's"
+        And I am on the Recipe Detail Screen"
+        Then when I tap on the back button, I should be on the Recipe Selection Screen
+      */
+      /*test('Sweet Maria Back Button on Recipe Detail Screen', () async {
+        final recipeSelectionBtn = find.byValueKey("recipe-name-Sweet Maria's");
+        final recipeNameText = find.byValueKey("recipe-name-key-Sweet Maria's");
+        final backBtnFinder = find.byValueKey('back-arrow-button');
+
+        //On the Recipe Selection Screen, we select Sweet Maria's
+        await driver.tap(recipeSelectionBtn);
+
+        //On the Recipe Detail Screen, we expect to see the text "Sweet Maria's"
+        expect(await driver.getText(recipeNameText), "Sweet Maria's");
+
+        //If we press back button, we expect to navigate back to the Recipe Selection Screen
+        await driver.tap(backBtnFinder);
+      });*/
     });
   });
 }
