@@ -128,8 +128,6 @@ void main() {
 
         await driver.tap(recipeSelectionBtn2);
         await driver.tap(startBtn);
-        expect(await driver.getText(currentStepLargeText), "Add 23g ground");
-        await Future.delayed(const Duration(seconds: 11), () async {});
 
         expect(await driver.getText(currentStepLargeText),
             "settle grounds until flat");
