@@ -7,8 +7,8 @@ class RecipeStep {
   RecipeStep(text, time) {
     //add any rules to reject invalid values
     //for example, reject negative gram amounts
-    this.text = text;
-    this.time = time;
+    if(text == null || text == ' '){new ArgumentError("empty step");}else this.text = text;
+    if( time == null|| time < 1 ){new ArgumentError("Invalid time");}else this.time = time;
   }
   static String timeDisplayed(time) {
     int sec, min;
