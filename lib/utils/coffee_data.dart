@@ -21,7 +21,6 @@ CoffeeRecipe makeSweetMariasRecipe() {
 
 CoffeeRecipe makeTestRecipe() {
   List<RecipeStep> steps = [
-    RecipeStep("Add 23g ground", 10),
     RecipeStep("settle grounds until flat", 10),
     RecipeStep("Moderate pour of coffee", 10),
     RecipeStep("Cover and wait", 30),
@@ -45,7 +44,7 @@ CoffeeRecipe makeTestRecipe2() {
     RecipeStep("Add 75g water", 8),
     RecipeStep("Cover and wait", 30),
     RecipeStep("Add 245g water gentle circles", 30),
-    RecipeStep("Swirl brew", 5),
+    
   ];
   CoffeeRecipe recipe = CoffeeRecipe(
       "Mirror's Course Ground Recipe",
@@ -59,7 +58,6 @@ CoffeeRecipe makeTestRecipe2() {
 
 CoffeeRecipe makeTestRecipe3() {
   List<RecipeStep> steps = [
-    RecipeStep("Add 52g ground", 10),
     RecipeStep("settle ground until flat", 10),
     RecipeStep("Add 100g water", 10),
     RecipeStep("Cover and wait", 90),
@@ -67,7 +65,7 @@ CoffeeRecipe makeTestRecipe3() {
     RecipeStep("Cover and wait", 60),
   ];
   CoffeeRecipe recipe = CoffeeRecipe(
-      "Legitimate Question's Two Cups of Coffee",
+      "Two Cups of Coffee",
       52,
       700,
       "medium-course ground coffee",
