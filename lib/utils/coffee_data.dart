@@ -19,7 +19,7 @@ CoffeeRecipe makeSweetMariasRecipe() {
   return recipe;
 }
 
-CoffeeRecipe makeTestRecipe() {
+CoffeeRecipe makeHowcastRecipe() {
   List<RecipeStep> steps = [
     RecipeStep("settle grounds until flat", 10),
     RecipeStep("Moderate pour of coffee", 10),
@@ -37,26 +37,25 @@ CoffeeRecipe makeTestRecipe() {
   return recipe;
 }
 
-CoffeeRecipe makeTestRecipe2() {
+CoffeeRecipe makeMirrorRecipe() {
   List<RecipeStep> steps = [
     RecipeStep("Add 20g ground", 10),
     RecipeStep("settle ground until flat", 10),
     RecipeStep("Add 75g water", 8),
     RecipeStep("Cover and wait", 30),
     RecipeStep("Add 245g water gentle circles", 30),
-    
   ];
   CoffeeRecipe recipe = CoffeeRecipe(
       "Mirror's Course Ground Recipe",
       20,
       320,
-      "couarse ground coffee",
+      "course ground coffee",
       "The original recipe: makes one delicious cup",
       steps);
   return recipe;
 }
 
-CoffeeRecipe makeTestRecipe3() {
+CoffeeRecipe makeTwoCupsRecipe() {
   List<RecipeStep> steps = [
     RecipeStep("settle ground until flat", 10),
     RecipeStep("Add 100g water", 10),
@@ -77,10 +76,9 @@ CoffeeRecipe makeTestRecipe3() {
 List<CoffeeRecipe> getAllRecipes() {
   return [
     makeSweetMariasRecipe(),
-    makeTestRecipe(),
-    makeTestRecipe2(),
-    makeTestRecipe3(),
-    
+    makeHowcastRecipe(),
+    makeMirrorRecipe(),
+    makeTwoCupsRecipe(),
   ];
 }
 
