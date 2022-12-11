@@ -18,19 +18,19 @@ void main() {
     expect(recipes[0].steps, isA<List<RecipeStep>>());
 
     // Howcast Medium Ground Coffee
-    expect(recipes[0], isA<CoffeeRecipe>());
-    expect(recipes[0].name, "Howcast Medium Ground Coffee");
-    expect(recipes[0].steps, isA<List<RecipeStep>>());
+    expect(recipes[1], isA<CoffeeRecipe>());
+    expect(recipes[1].name, "Howcast Medium Ground Coffee");
+    expect(recipes[1].steps, isA<List<RecipeStep>>());
 
     // Mirror's Course Ground Coffee
-    expect(recipes[0], isA<CoffeeRecipe>());
-    expect(recipes[0].name, "Mirror's Course Ground Coffee");
-    expect(recipes[0].steps, isA<List<RecipeStep>>());
+    expect(recipes[2], isA<CoffeeRecipe>());
+    expect(recipes[2].name, "Mirror's Course Ground Recipe");
+    expect(recipes[2].steps, isA<List<RecipeStep>>());
 
     // Two Cups of Coffee
-    expect(recipes[0], isA<CoffeeRecipe>());
-    expect(recipes[0].name, "Two Cups of Coffee");
-    expect(recipes[0].steps, isA<List<RecipeStep>>());
+    expect(recipes[3], isA<CoffeeRecipe>());
+    expect(recipes[3].name, "Two Cups of Coffee");
+    expect(recipes[3].steps, isA<List<RecipeStep>>());
   });
 
   test('Test for Sweet Marias', () {
